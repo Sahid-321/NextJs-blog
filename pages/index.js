@@ -1,6 +1,7 @@
 import Main from "../components/main"
 import React, { useState, useEffect } from "react";
 import Header from "@/components/header";
+import Article from "./article";
 export default function Home() {
   const [data, setData] = useState([]);
 
@@ -17,6 +18,7 @@ export default function Home() {
     <div>
       <Header/>
       <Main/>
+      <Article/>
     </div>
   );
 }

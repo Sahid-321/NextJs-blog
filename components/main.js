@@ -1,51 +1,43 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import Link from 'next/link';
 export default function main() {
-    const obj = [{
-        id:1,
-        name: "sahid sfgfg gsg sd fsgs gsdgsd gsdgf gfdgdf fdgdfg  dgdfg rdgfd fg"
-    },
-    {
-        id:2,
-        name: "sahid1"
-    },
-    {
-        id:3,
-        name: "sahid2"
-    },
-    {
-        id:4,
-        name: "sahid sfgfg gsg sd fsgs gsdgsd gsdgf"
-    },
-    {
-        id:5,
-        name: "sahid sfgfg gsg sd fsgs gsdgsd gsdgf"
-    },
-    {
-        id:6,
-        name: "sahid sfgfg gsg sd fsgs gsdgsd gsdgf"
-    }]
 
-    const handleArticleOpen  = (id)=>{
+    const handleArticleOpen = (id) => {
 
     }
+    //console.log(articleView);
+
+    const article = [
+        {
+            id: 1,
+            title: "Lorem Ipsum",
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        },
+        {
+            id: 2,
+            title: "Dolor Sit Amet",
+            content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        },
+        {
+            id: 3,
+            title: "Consectetur Adipiscing Elit",
+            content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        },
+    ];
 
     return (
-        <div className="grid grid-cols-4 gap-4 bg-green-100 mt-10">
-        {
-            obj.map((elem)=>{
-                return(
-                  
-                 <div  >
-                      <div >
-                    <h1 className='flex-1  bg-gray-200 m-5 p-3' onClick={()=>handleArticleOpen(elem.id)} >{elem.name}</h1>
-                    </div>
-                 </div>
-                )
-            })
-        }
-       
+        <>
+            <div className="grid grid-cols-4 gap-4 bg-green-100 mt-10">
 
-        </div>
+                {article.map(article => (
+                    <li key={article.id}>
+                        <Link href={`/article/${article.id}`}>
+                            {article.title}
+                        </Link>
+                    </li>
+                ))}
+            </div>
+
+        </>
     )
 }
