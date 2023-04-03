@@ -5,7 +5,8 @@ function Article() {
   const router = useRouter();
   const { id } = router.query;
   const [article, setArticle] = useState(null);
-
+  //const id = 1;
+console.log(id, "from article")
   useEffect(() => {
     async function fetchArticle() {
       const res = await fetch(`/api/articles/${id}`);

@@ -1,7 +1,7 @@
 import Main from "../components/main"
 import React, { useState, useEffect } from "react";
 import Header from "@/components/header";
-import Article from "./article";
+import Article from "./article/[id]";
 export default function Home() {
   const [data, setData] = useState([]);
 
