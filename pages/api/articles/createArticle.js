@@ -13,10 +13,34 @@ const handler = nc({
     },
 })
 
-    .get(async (req, res) => {
+.get(async (req, res) => {
+    const { page = 1 } = req.query;
+    const {limit = 3} = req.query;
+
+    const skip = (page - 1) * limit;
+
+    try {
+        const total = await ArticleModel.countDocuments();
         const data = await ArticleModel.find({})
-        res.status(200).send(data);
-    })
+            .skip(skip)
+            .limit(limit)
+            .exec();
+
+        if (!data.length) {
+            return res.status(404).json({ message: `No articles found for page ${page}` });
+        }
+
+        res.status(200).json({
+            page,
+            limit,
+            total,
+            data
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+})
     .post(async (req, res) => {
         const { name, email, title, details } = req.body
         try {
