@@ -15,8 +15,8 @@ export default function header() {
                 <input type="text" placeholder="Search..." className="border " />
 
             </div>
-            <Link href='./article/createArticle'>Create Article</Link>
-            {name == '' ? <Link href='./auth'>Login/Signup</Link>: <h2>{name}</h2>}
+           {name ? <Link href='./article/createArticle'>Create Article</Link> : <p></p>}
+            {name ?<h2>{name}</h2> : <Link href='./auth'>Login/Signup</Link> }
         </header>
     )
 }

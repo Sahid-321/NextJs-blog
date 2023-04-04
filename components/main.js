@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link';
+import axios from 'axios';
+import { useEffect } from 'react';
 export default function main() {
 
     const handleArticleOpen = (id) => {
@@ -24,14 +26,21 @@ export default function main() {
             content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         },
     ];
+const [articleData, setArticleData] = useState([]);
+useEffect(()=>{
+    axios.get("/api/articles/createArticle")
+    .then((res)=>setArticleData(res.data))
+    .catch((err)=>console.log(err))
+},[])
+ //  console.log(articleData);
 
     return (
         <>
             <div className="grid grid-cols-4 gap-4 bg-green-100 mt-10">
 
-                {article.map(article => (
-                    <li key={article.id}>
-                        <Link href={`/article/${article.id}`}>
+                {articleData.map(article => (
+                    <li key={article._id}>
+                        <Link href={`/article/${article._id}`}>
                             {article.title}
                         </Link>
                     </li>
