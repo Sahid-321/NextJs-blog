@@ -29,5 +29,30 @@ const handler = nc({
         }
     })
 
+    .put(async (req, res) => {
+        const { id } = req.query; 
+        const { title, details } = req.body;
+        try {
+          const updatedArticle = await ArticleModel.findOneAndUpdate(
+            { _id: id },
+            { title, details },
+            { new: true }
+          );
+          res.status(200).send(updatedArticle);
+        } catch (error) {
+          console.log(error);
+          res.status(400).send("something error");
+        }
+      })
+      .delete(async (req, res) => {
+        const { id } = req.query; 
+        try {
+          await ArticleModel.findByIdAndDelete(id);
+          res.status(200).send({ msg: "Article deleted successfully" });
+        } catch (error) {
+          console.log(error);
+          res.status(400).send("something error");
+        }
+      });
 
 export default handler;
