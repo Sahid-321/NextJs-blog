@@ -1,7 +1,7 @@
 // pages/api/hello.js
 import nc from "next-connect";
 const mongoose = require("mongoose")
-import  UserModel  from "../models/userModel";
+import  UserModel  from "../../models/userModel";
 const bcrypt = require('bcryptjs');
 
 const handler = nc({
@@ -20,7 +20,7 @@ const handler = nc({
   })
   .post( async(req, res) => {
     try {
-        const { email, password, role } = req.body;
+        const {name, email, password, role } = req.body;
         const present = await UserModel.findOne({ email: email });
         if (present) {
           res.status(403).send({ msg: 'User already exists' });
@@ -30,7 +30,7 @@ const handler = nc({
               console.log(err);
               res.sendStatus(500).send({ msg: 'Something went wrong' });
             } else {
-              const data = new UserModel({ email: email, password: hash, role: role });
+              const data = new UserModel({name:name, email: email, password: hash, role: role });
               await data.save();
               res.status(201).send({ msg: 'Account created successfully' });
             }
