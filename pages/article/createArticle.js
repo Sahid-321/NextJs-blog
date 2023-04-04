@@ -10,30 +10,35 @@ export default function createArticle() {
         name: "",
         email: "",
         title: "",
-        details: ""
+        details: "",
+        role: ""
     })
     const [title, setTitle] = useState('')
     const [details, setDetails] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+  //  const [role, setRole] = useState('')
     useEffect(() => {
         const dataName = window.localStorage.getItem('userName');
         const dataEmail = window.localStorage.getItem('userEmail');
+        const dataRole = window.localStorage.getItem('userRole');
         setName(dataName)
         setEmail(dataEmail)
+       // setRole(dataRole)
 
         setPostData({
             name: name,
             email: email,
             title: title,
-            details: details
+            details: details,
+            role:"super-admin"
            })
      
     }, [ title, details])
-
+//console.log(postData, "post data");
     const handlePost = () => {
         
-   
+   //console.log(postData, "data");
 axios.post("/api/articles/createArticle", postData)
 .then((res)=>{
     alert(res.data.msg)

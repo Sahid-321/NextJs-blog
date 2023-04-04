@@ -6,6 +6,7 @@ function Article() {
   const { id } = router.query;
   const [article, setArticle] = useState(null);
   const [email, setEmail] = useState('')
+  const [role, setRole] = useState('')
   const [updatedArticle, setUpdatedArticle] = useState(false);
   //for update
   const [title, setTitle] = useState('')
@@ -22,7 +23,9 @@ function Article() {
       const articleData = await res.json();
       setArticle(articleData);
       const dataEmail = window.localStorage.getItem('userEmail');
+      const dataRole = window.localStorage.getItem('userRole');
       setEmail(dataEmail)
+      setRole(dataRole)
     }
 
     //update data object
@@ -50,7 +53,7 @@ function Article() {
     .catch((err)=>console.log(err))
   }
   
-
+  //console.log(article,"role");
  
   if (!article) {
     return <div>Loading...</div>;
@@ -58,7 +61,7 @@ function Article() {
 
   return (
     <div>
-    {article.email == email ? (
+    { article.email == email || article.role == role  ? (
       <div>
         {updatedArticle ? (
         <div className=''>
@@ -66,7 +69,7 @@ function Article() {
         <input onChange={(e)=>setDetails(e.target.value)} placeholder='Post details' /> <br></br>
         <button onClick={()=>handleEdit(article._id)}>Update</button>
     </div>
-        ) : (
+        ) :   (
           <>
             <button onClick={() =>setUpdatedArticle(true)}>Edit</button>
             <button onClick={() => handleDelete(article._id)}>Delete</button>
@@ -81,6 +84,7 @@ function Article() {
         <h2>{article.title}</h2>
         <p>{article.details}</p>
       </div>
+      
     )}
   </div>
   );

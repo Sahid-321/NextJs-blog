@@ -24,6 +24,7 @@ export default function auth() {
                     alert("Login Successful")
                     window.localStorage.setItem('userName', res.data.name);
                     window.localStorage.setItem('userEmail', res.data.email);
+                    window.localStorage.setItem('userRole', res.data.role);
                     router.push('/');
                 }
             })

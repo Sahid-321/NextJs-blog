@@ -42,9 +42,10 @@ const handler = nc({
     }
 })
     .post(async (req, res) => {
-        const { name, email, title, details } = req.body
+        const { name, email, title, details, role } = req.body
+        console.log(role,"api role");
         try {
-            const data = new ArticleModel({ name: name, email: email, title: title, details: details });
+            const data = new ArticleModel({ name: name, email: email, title: title, details: details, role:role });
             await data.save();
             res.status(201).send({ msg: 'data posted' });
         } catch (error) {

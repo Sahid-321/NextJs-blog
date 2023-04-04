@@ -22,6 +22,7 @@ const handler = nc({
         const {  email, password } = req.body
         const user = await UserModel.findOne({ email: email })
         const name = user.name;
+        const role = user.role
         if (user) {
             const hash = user.password
             bcrypt.compare(password, hash, function (err, result) {
@@ -33,7 +34,7 @@ const handler = nc({
                 if (result) {
 
                     //res.status(200)
-                    res.status(200).send({ msg: "Login Successfull", email, name })
+                    res.status(200).send({ msg: "Login Successfull", email, name, role })
 
                 } else {
                     res.status(401).send({ msg: "Authentication failed" })
