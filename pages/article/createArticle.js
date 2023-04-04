@@ -1,7 +1,11 @@
 import React from 'react'
 import axios from 'axios'
+import { useRouter } from 'next/router';
+
 import { useState, useEffect } from 'react'
 export default function createArticle() {
+
+    const router = useRouter();
     const [postData, setPostData] = useState({
         name: "",
         email: "",
@@ -31,7 +35,9 @@ export default function createArticle() {
         
    
 axios.post("/api/articles/createArticle", postData)
-.then((res)=>alert(res.data.msg))
+.then((res)=>{
+    alert(res.data.msg)
+     router.push('/');})
 .catch((err)=>console.log(err))
 
 

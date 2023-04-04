@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-
 function Article() {
   const router = useRouter();
   const { id } = router.query;
@@ -38,12 +37,16 @@ function Article() {
   const handleEdit = async(id)=>{
   //  console.log(updateData);
    await axios.put(`/api/articles/createArticle/?id=${id}`, updateData)
-    .then((res)=>console.log(res))
+    .then((res)=>{alert("Post  updated")
+      router.push('/')})
     .catch((err)=>console.log(err))
   }
   const handleDelete = async (id)=>{
    await axios.delete(`/api/articles/createArticle/?id=${id}`)
-    .then((res)=>console.log(res))
+    .then((res)=>{
+      alert("Post  updated")
+      router.push('/')
+    })
     .catch((err)=>console.log(err))
   }
   
