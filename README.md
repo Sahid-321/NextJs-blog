@@ -3,6 +3,7 @@
 
 The NextJs-blog project is a blogging web application developed using Next.js, a popular React framework. The application allows users to sign up, create new accounts, and post articles to the blog. Users can also edit and delete their own articles, leave comments on other articles, and search for posts based on their titles and content.
 
+Deployed link: https://next-js-blog-sahidjamal.vercel.app/
 
 ## Run Locally
 
