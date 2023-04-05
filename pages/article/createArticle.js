@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router';
 
 import { useState, useEffect } from 'react'
-export default function createArticle() {
+export default function CreateArticle() {
 
     const router = useRouter();
     const [postData, setPostData] = useState({

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router';
-export default function auth() {
+export default function Auth() {
     const router = useRouter();
     const [checkAuth, setCheckAuth] = useState(true)
     const [loginEmail, setLoginEmail] = useState('')
