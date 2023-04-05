@@ -10,4 +10,4 @@ const userSchema = mongoose.Schema({
 
 
 
-export default mongoose.models.User || mongoose.model("User", userSchema)
+export default mongoose.models.UserBlog || mongoose.model("UserBlog", userSchema)
