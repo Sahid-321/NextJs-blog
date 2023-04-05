@@ -52,7 +52,7 @@ This will start the NextJS development server at http://localhost:3000. You can 
 
 Please note that the Manage Articles feature is only available to super-admin users. To become a super-admin user, you must manually set your role field to super-admin in the database.
 
-## Here is the login details for super admin.
+## Here are the login details for the super admin to edit and delete others’ posts.
 
 email: super@gmail.com
 password: super
