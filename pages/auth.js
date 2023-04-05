@@ -57,12 +57,12 @@ export default function auth() {
               <input
                 className='border border-gray-400 rounded-md py-2 px-3 w-full'
                 onChange={(e) => setLoginEmail(e.target.value)}
-                placeholder='Enter Email'
+                placeholder='Enter Email' type="email"
               /><br />
               <input
                 className='border border-gray-400 rounded-md py-2 px-3 w-full mt-4'
                 onChange={(e) => setLoginPass(e.target.value)}
-                placeholder='Enter Password'
+                placeholder='Enter Password' 
               /><br />
               <button
                 onClick={handleLogin}
@@ -88,17 +88,17 @@ export default function auth() {
               <input
                 className='border border-gray-400 rounded-md py-2 px-3 w-full'
                 onChange={(e) => setSignupName(e.target.value)}
-                placeholder='Enter Your Name'
+                placeholder='Enter Your Name' type='text'
               /><br />
               <input
                 className='border border-gray-400 rounded-md py-2 px-3 w-full mt-4'
                 onChange={(e) => setSignupEmail(e.target.value)}
-                placeholder='Enter Email'
+                placeholder='Enter Email' type='email'
               /><br />
               <input
                 className='border border-gray-400 rounded-md py-2 px-3 w-full mt-4'
                 onChange={(e) => setSignupPass(e.target.value)}
-                placeholder='Enter Password'
+                placeholder='Enter Password' type='password'
               /><br />
               <button
                 className='bg-blue-500 text-white rounded-md py-2 px-4 mt-4 hover:bg-blue-600'
