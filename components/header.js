@@ -1,22 +1,33 @@
-
 import Link from 'next/link'
 import { useEffect, useState } from "react";
 
-export default function header({ setSearchTerm }) {
-    const [name, getName] = useState('')
-    useEffect(() => {
-        const data = window.localStorage.getItem('userName');
-        getName(data)
-    }, [])
+export default function Header({ setSearchTerm }) {
+  const [name, setName] = useState('');
+  
+  useEffect(() => {
+    const data = window.localStorage.getItem('userName');
+    setName(data);
+  }, []);
 
-    return (
-        <header className="bg-gray-100 flex gap-20">
-            <div>
-                <input type="text" placeholder="Search..." className="border" onChange={(e) => setSearchTerm(e.target.value)} />
+  const handleLogout = () => {
+    window.localStorage.clear();
+    setName('');
+  };
 
-            </div>
-            {name ? <Link href='./article/createArticle'>Create Article</Link> : <p></p>}
-            {name ? <h2>{name}</h2> : <Link href='./auth'>Login/Signup</Link>}
-        </header>
-    )
+  return (
+    <header className="bg-teal-200 py-4 px-6 border-b border-green-200 flex justify-between items-center">
+      <div className='flex items-center'>
+        <input type="text" placeholder="Search..." className="py-2 px-4 rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" onChange={(e) => setSearchTerm(e.target.value)} />
+      </div>
+      {name ? (
+        <>
+          <Link href='./article/createArticle'>Create Article</Link>
+          <h2>{name}</h2>
+          <button onClick={handleLogout}>Logout</button>
+        </>
+      ) : (
+        <Link href='./auth'>Login/Signup</Link>
+      )}
+    </header>
+  );
 }

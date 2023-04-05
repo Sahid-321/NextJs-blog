@@ -49,10 +49,23 @@ await axios.post("/api/articles/createArticle", postData)
     }
 
     return (
-        <div className=''>
-            <input onChange={(e)=>setTitle(e.target.value)} placeholder='Title' /> <br></br>
-            <input onChange={(e)=>setDetails(e.target.value)} placeholder='Post details' /> <br></br>
-            <button onClick={handlePost}>post</button>
-        </div>
+        <div className='flex flex-col'>
+        <input
+          className='px-4 py-2 rounded-md border border-gray-300 mb-2'
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder='Title'
+        />
+        <input
+          className='px-4 py-2 rounded-md border border-gray-300 mb-2'
+          onChange={(e) => setDetails(e.target.value)}
+          placeholder='Post details'
+        />
+        <button
+          className='px-4 py-2 rounded-md bg-blue-500 text-white font-medium'
+          onClick={handlePost}
+        >
+          Post
+        </button>
+      </div>
     )
 }
