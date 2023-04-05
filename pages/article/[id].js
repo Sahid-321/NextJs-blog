@@ -177,7 +177,7 @@ function Article() {
         <h2 className="flex items-end text-4xl font-bold mb-4">{article.title}</h2>
         <p className="text-gray-700">{article.details}</p>
       
-        <div className="bg-green-300 mt-20 p-4">
+        {/* <div className="bg-green-300 mt-20 p-4">
           <div className="flex items-center mb-4">
             <input 
               className="px-2 py-1 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-400 flex-1" 
@@ -201,7 +201,7 @@ function Article() {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </div>
       
 
