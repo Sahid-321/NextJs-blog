@@ -1,53 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-\## Getting Started
+# Nextjs-blog
 
-\## Installation
+The NextJs-blog project is a blogging web application developed using Next.js, a popular React framework. The application allows users to sign up, create new accounts, and post articles to the blog. Users can also edit and delete their own articles, leave comments on other articles, and search for posts based on their titles and content.
 
-To run the application, first clone this repository to your local machine:
 
-bash
+## Run Locally
 
-Copy code
+Clone the project
 
-git clone https://github.com/Sahid-321/NextJs-blog.git
+```bash
+  git clone https://github.com/Sahid-321/NextJs-blog.git
+```
 
-Then, navigate to the project directory and install the dependencies:
+Go to the project directory
 
-bash
+```bash
+  cd NextJs-blog
+```
 
-Copy code
+Install dependencies
 
-cd NextJs-blog
+```bash
+  npm install
+```
 
-npm install
+Start the server
 
-Usage
-
-To start the application in development mode, run the following command:
-
-bash
-
-Copy code
-
-npm run dev
+```bash
+  npm run dev
+```
 
 This will start the NextJS development server at http://localhost:3000. You can then view the application in your web browser.
+## Features
 
-\## Features
+- Authentication: The application uses NextAuth.js library for authentication, Users can sign in using email and password and also able to create a new account using their name, email address and password.
 
-Authentication: The application uses NextAuth.js library for authentication, Users can sign in using email and password and also able to  create a new account using their name, email address and password.
+- Post Article: Users can post new articles to the blog. Users can add a title, content for each article.
 
-Post Article: Users can post new articles to the blog. Users can add a title, content for each article.
+- Edit Article: Users can edit their own articles after they've been posted. Users can edit the title, content, of each article.
 
-Edit Article: Users can edit their own articles after they've been posted. Users can edit the title, content, of each article.
+- Delete Article: Users can delete their own articles. Deleted articles are removed from the blog permanently.
 
-Delete Article: Users can delete their own articles. Deleted articles are removed from the blog permanently.
+- Comment: Users can leave comments on articles. Comments are displayed below each article, along with the name of the user who left the comment.
 
-Comment: Users can leave comments on articles. Comments are displayed below each article, along with the name of the user who left the comment.
+- Manage Articles: Super-admin users can manage articles of all users. They can edit and delete articles of any user.
 
-Manage Articles: Super-admin users can manage articles of all users. They can edit and delete articles of any user.
-
-Search Functionality: Users can search for blog posts based on their title and content. Results are displayed in real-time as the user types their query.
+- Search Functionality: Users can search for blog posts based on their title and content. Results are displayed in real-time as the user types their query.
 
 Please note that the Manage Articles feature is only available to super-admin users. To become a super-admin user, you must manually set your role field to super-admin in the database.
+
