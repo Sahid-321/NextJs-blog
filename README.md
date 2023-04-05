@@ -5,9 +5,11 @@ The NextJs-blog project is a blogging web application developed using Next.js, a
 
 Deployed link: https://next-js-blog-sahidjamal.vercel.app/
 
+Note: Prefered to run locally for smooth experience.
+
 ## Run Locally
 
-Clone the project
+Clone the project or download Zip
 
 ```bash
   git clone https://github.com/Sahid-321/NextJs-blog.git
@@ -50,3 +52,7 @@ This will start the NextJS development server at http://localhost:3000. You can 
 
 Please note that the Manage Articles feature is only available to super-admin users. To become a super-admin user, you must manually set your role field to super-admin in the database.
 
+## Here is the login details for super admin.
+
+email: super@gmail.com
+password: super
