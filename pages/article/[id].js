@@ -163,7 +163,7 @@ function Article() {
                 {chatData.map((elem) => {
                   return (
                     <div key={elem._id} className="mb-2">
-                      <h3 className="text-lg font-medium">{elem.title}</h3>
+                      <h3 className="text-lg font-medium"><span>{elem.user}:</span> {elem.title}</h3>
                     </div>
                   );
                 })}
