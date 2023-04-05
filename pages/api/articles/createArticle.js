@@ -22,18 +22,18 @@ const handler = nc({
     try {
         const total = await ArticleModel.countDocuments();
         const data = await ArticleModel.find({})
-            .skip(skip)
-            .limit(limit)
-            .exec();
+            // .skip(skip)
+            // .limit(limit)
+            // .exec();
 
         if (!data.length) {
             return res.status(404).json({ message: `No articles found for page ${page}` });
         }
 
         res.status(200).json({
-            page,
-            limit,
-            total,
+            // page,
+            // limit,
+            // total,
             data
         });
     } catch (error) {

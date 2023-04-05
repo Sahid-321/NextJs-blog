@@ -18,7 +18,7 @@ export default function Home() {
     <div>
       
       <Main/>
-      <Article/>
+      {/* <Article/> */}
     </div>
   );
 }

@@ -36,10 +36,10 @@ export default function createArticle() {
      
     }, [ title, details])
 //console.log(postData, "post data");
-    const handlePost = () => {
+    const handlePost = async() => {
         
    //console.log(postData, "data");
-axios.post("/api/articles/createArticle", postData)
+await axios.post("/api/articles/createArticle", postData)
 .then((res)=>{
     alert(res.data.msg)
      router.push('/');})
