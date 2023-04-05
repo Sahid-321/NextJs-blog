@@ -1,5 +1,5 @@
 import Main from "../components/main"
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/header";
 import Article from "./article/[id]";
 export default function Home() {
